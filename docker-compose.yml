@@ -1,0 +1,43 @@
+# LAMP docker compose file for COMP4039 / COMP3084 Coursework
+version: '3'
+
+services:
+  php-apache:
+    #image: php:8.2-apache
+    build:
+      context: ./php-apache
+    ports:
+      - 80:80
+    volumes:
+      - ./html:/var/www/html
+    links:
+      - mariadb
+    restart: always
+
+  mariadb:
+    #image: mariadb:12.3
+    build: 
+      context: ./mariadb
+    restart: always
+    ports:
+      - 3306
+    volumes:
+      - ./mariadb-data:/var/lib/mysql
+    environment:
+      TZ: "Europe/London"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_ROOT_PASSWORD: "rootpwd"
+
+  phpmyadmin:
+    #image: phpmyadmin latest
+    image: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: rootpwd
+    ports:
+      - 8081:80
+
+        #volumes:
+        #    mariadb-data:
