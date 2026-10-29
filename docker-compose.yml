@@ -1,9 +1,12 @@
 # LAMP docker compose file for COMP4039 / COMP3084 Coursework
-version: '3'
+name: dis-docker
+# version: "3"
 
 services:
   php-apache:
     #image: php:8.2-apache
+    depends_on:
+      - mariadb
     build:
       context: ./php-apache
     ports:
