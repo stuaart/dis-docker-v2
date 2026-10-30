@@ -40,7 +40,7 @@ INSERT INTO `users` (`username`, `password`) VALUES
 
 DROP TABLE IF EXISTS `People`;
 CREATE TABLE IF NOT EXISTS `People` (
-  `ID` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `ID` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL,
   `PhoneNumber` varchar(12) DEFAULT NULL,
   `Address` varchar(60) DEFAULT NULL,
