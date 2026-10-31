@@ -69,7 +69,7 @@ Once you have a local copy of the forked Docker configuration, you will need to 
 
 ## Task 5 - Create some new code in your Docker installation
 
-Locate your local Docker fork. This will be wherever you cloned it to in [Task 3](#task-3-clone-the-project). Create a new HTML file in your `html/coursework/` directory called `test.html`. Copy and paste the following code into that HTML file:
+Locate your local Docker fork. This will be wherever you cloned it to in [Task 3](#task-3---clone-the-project). Create a new HTML file in your `html/coursework/` directory called `test.html`. Copy and paste the following code into that HTML file:
 
 ```html
 <html>
