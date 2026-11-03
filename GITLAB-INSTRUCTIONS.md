@@ -36,7 +36,7 @@ Forking a project creates an identical copy of an existing project. You now have
 
 ## Task 2 - Add module convenors as project members on your fork
 
-Go to your list of projects in GitLab and click on your forked project (i.e., `dis-docker-v2`). On the left side of the screen you will see a menu under the name of your project that includes the "Members" option. Select that, then use the "Invite Members" button to add the module convenors as Guest role (i.e., search for Stuart Reeves and Nazia Hameed).
+Go to your list of projects in GitLab and click on your forked project (i.e., `dis-docker-v2`). On the left side of the screen you will see a menu under the name of your project that includes the "Members" option. Select that, then use the "Invite Members" button to add the module convenors as at least the "Planner" role (i.e., search for Stuart Reeves and Nazia Hameed).
 
 The next task is get a copy of your forked project from the School's GitLab server on to your local computer so you can work on it.
 
@@ -55,7 +55,9 @@ $ git clone https://projects.cs.nott.ac.uk/XXXXXX/dis-docker-v2.git
 
 replacing `XXXXXX` with your University username. You will be asked for you University credentials (username and password). Keep your command line / shell window open as we will be using this again shortly.
 
-The first time you run the above command it will fail. This is because the GitLab server is not expecting your University password, but rather a *personal access token*. Following the instructions in the output of the above command to generate a personal access token with read_repository and write_repository scopes, then rerun the above command and enter your personal access token instead of your University password. Make sure you keep the personal access token somewhere safe, you will need to enter it whenever you push to your repository. If you lose your token, you can always generate a new one and revoke the old one. If you want to avoid having to type your username and personal access token when using `git`, you can set up GitLab with ssh keys (instructions are in [Less typing](#less-typing)).
+The first time you run the above command it will fail. This is because the GitLab server is not expecting your University password, but rather a *personal access token*. Following the instructions in the output of the above command to generate a personal access token with read_repository and write_repository scopes, then rerun the above command and enter your personal access token instead of your University password. The simplest way to generate this is to "Edit profile" then on the LHS menu to go "Access" (LHS menu) then "Personal access tokens", use the "Generate token" button to create a "Legacy token", give the token a name and a sensible expiration date, select the correct scopes as noted above, and then hit "Generate token". The page should be accessible [via this link](https://projects.cs.nott.ac.uk/-/user_settings/personal_access_tokens).
+
+Make sure you keep the personal access token somewhere safe, you will need to enter it whenever you push to your repository. If you lose your token, you can always generate a new one and revoke the old one. If you want to avoid having to type your username and personal access token when using `git`, you can set up GitLab with ssh keys (instructions are in [Less typing](#less-typing)).
 
 The code on your local machine is now an exact copy of your forked code on the School's GitLab server. Now you are going to add a file containing some code to your project.
 
