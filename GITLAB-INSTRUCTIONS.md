@@ -50,7 +50,7 @@ Below is an example of doing this using a command line interface, e.g., a *termi
 Open a terminal whatever your flavour of operating system. To clone the project you will need its URL. You can obtain this via the project's main page and the "Code" button on the right hand side. Click this and copy the "Clone with HTTPS" address. With your git client, run the following command (or use a `clone` option in a GUI):
 
 ```bash
-$ git clone https://projects.cs.nott.ac.uk/XXXXXX/dis-docker-v2.git
+git clone https://projects.cs.nott.ac.uk/XXXXXX/dis-docker-v2.git
 ```
 
 replacing `XXXXXX` with your University username. You will be asked for you University credentials (username and password). Keep your command line / shell window open as we will be using this again shortly.
@@ -90,7 +90,7 @@ Now you have created a new test HTML file, the next step is to add it to your lo
 In your command line shell, go to wherever your `dis-docker-v2` root directory is located (i.e., use the `cd` command in your shell), and type:
 
 ```bash
-$ git add html/coursework/test.html
+git add html/coursework/test.html
 ```
 
 This will add the `test.html` file to your local copy of your project.
@@ -108,7 +108,7 @@ In a browser, visit `http://localhost/coursework/test.html`. You should see a pa
 Type the command in your terminal window:
 
 ```bash
-$ git commit -am "my first commit"
+git commit -am "my first commit"
 ```
 
 This saves a snapshot of your code in your local repository, as well as a message ("my first commit") associated with this snapshot. What message you actually type is up to you. In general, it is good to use a message which gives a brief summary of the changes in your code you have made; these messages also communicate to others (i.e,. module convenors) who will be examining the repository about what the purpose of each commit was.
@@ -121,7 +121,7 @@ All your code is currently stored on whatever local machine you are using, so no
 Staying in the `dis-docker-v2` root directory, type the following command in the terminal and enter your University credentials when prompted:
 
 ```bash
-$ git push
+git push
 ```
 
 This command copies all the changes you've committed on your local computer to the School's GitLab server. Your repository on the School's GitLab server is now an exact copy of your local repository. You've therefore also backed up your work so far.
@@ -153,8 +153,8 @@ We'll now update these modifications to the existing page to the School's GitLab
 Type:
 
 ```bash
-$ git commit -am "updated body text on page"
-$ git push
+git commit -am "updated body text on page"
+git push
 ```
 
 As before, the first command creates a new snapshot of your code. Notice the commit message gives a brief description of the changes you have made. The second command copies your changes to the School's GitLab server.
@@ -162,7 +162,7 @@ As before, the first command creates a new snapshot of your code. Notice the com
 If you are ever unsure what the status of your local repository is compared with that of the remote (i.e., the GitLab server), use the following command:
 
 ```bash
-$ git status
+git status
 ```
 
 This is the general **workflow** you should use during your Coursework development. Note that you do not need to add, update, commit and push changes to your code base for every single file. Often you will want to create a bunch of new code and add or update it in one single commit. What we outline above is merely a simplified version for the purposes of demonstration.
