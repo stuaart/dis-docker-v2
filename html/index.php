@@ -15,7 +15,7 @@
 					<a href="php-demos/index.php">PHP demos</a>
 				</li>
 				<li>
-					<a href="lab-8-demo-code/index.php">Lab 8 / Exercise 8 demo code</a>
+					<a href="lab-demo-code/index.php">Lab 8 / Exercise 8 demo code</a>
 				</li>
 				<li>
 					<a href="js-demos/index.html">Javascript demos</a>

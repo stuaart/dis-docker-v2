@@ -29,6 +29,23 @@ Try the following examples using an online JavaScript sandbox e.g., https://jsfi
 </html>
 ```
 
+## Comments
+```html
+<html>
+  <body>
+  <script type="text/javascript">
+    /* The code below will write 
+       one heading and two paragraphs */
+
+    document.write("<h1>This is a heading</h1>");
+    document.write("<p>This is a paragraph.</p>");
+    document.write("<p>This is another paragraph.</p>");
+    // Script ended
+  </script>
+  </body>
+</html>
+```
+
 ## Writing to the HTML stream
 ```html
 <html>
@@ -39,7 +56,6 @@ Try the following examples using an online JavaScript sandbox e.g., https://jsfi
     document.write("<h1>This is a heading</h1>");
     document.write("<p>This is a paragraph.</p>");
     document.write("<p>This is another paragraph.</p>");
-    // Script ended
   </script>
   </body>
 </html>
@@ -99,76 +115,45 @@ function validateForm() {
 ```
 
 
-## Scoping
-```html
-<html>
-  <body>
-<script type="text/javascript">
-{
-	document.write("<h1>This is a heading</h1>");
-	document.write("<p>This is a paragraph.</p>");
-	document.write("<p>This is another paragraph.</p>");
-}
-</script>
-  </body>
-</html>
-```
-
+## Variable scoping, handling exceptions
 ```html
 <html>
   <body>
   <h1>My First Web Page</h1>
 	<script type="text/javascript">
-	  var a = 10;
+    if (true)
     {
-    	var a = 20;
+      var a = 10; // 'function' scope meaning it's only declared once
+      {
+    	  var a = 20; /* 'function' scope means it doesn't matter if it's in a block,
+                       it will still exist outside of the block */
+        document.write("<p>a=", a, "</p>"); // a has been updated
+      }
+      let b = 10; /* 'block' scope meaning that it does not exist outside a block the 
+                     variable is defined in */
+      {
+    	  let b = 20; /* assignment only happens locally and 'b' outside this block is 
+                       unaffected */
+        document.write("<p>b=", b, "</p>");
+      }
+      // we can access both variables but *which* is accessed differs
+      document.write("<p>a=", a, "</p>"); 
+      document.write("<p>b=", b, "</p>");
     }
-    let b = 10;
-    {
-    	let b = 20;
-    }
+
+    // outside of the if-block we encounter trouble for the let-defined variable
     document.write("<p>a=", a, "</p>");
-    document.write("<p>b=", b, "</p>");
-	</script>
+    try // try-catch is very similar to PHP, Python etc.
+    {
+      document.write("<p>b=", b, "</p>");
+    } catch (err) { 
+      document.write("<p>b=not defined!</p>");
+    }
+  </script>
   </body>
 </html>
 ```
 
-```javascript
-// Global variable
-let globalVariable = "This is a global variable";
-
-// Declaring another global without using var
-global = "another global";
-
-function myFunction() {
-  // Local variable
-  var localVariable = "This is a    local variable";
-  // Printing the global and the local
-  console.log(globalVariable); 
-  console.log(localVariable); 
-  /* Reusing the name above to make new assignation (gets destroyed anyway) */
-  global = "this is a fake global";
-}
-
-```
-
-## Comments
-```html
-<html>
-  <body>
-	<script type="text/javascript">
-		/* The code below will write 
-		   one heading and two paragraphs */
-
-		document.write("<h1>This is a heading</h1>");
-		document.write("<p>This is a paragraph.</p>");
-		document.write("<p>This is another paragraph.</p>");
-		// Script ended
-	</script>
-  </body>
-</html>
-```
 
 ## Event handlers
 ```html
